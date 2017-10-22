@@ -9,9 +9,7 @@ public class Main {
     public static void main(String args[]) {
 
         Injector injector = Guice.createInjector(new FHIRFlyModule());
-
         FHIRFlyService service = injector.getInstance(FHIRFlyService.class);
         service.run(args);
-
     }
 }

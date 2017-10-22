@@ -2,9 +2,9 @@ package com.ilroberts;
 
 import com.google.inject.AbstractModule;
 import com.ilroberts.service.FHIRFlyService;
-import com.ilroberts.service.FHIRFlyServiceImpl;
+import com.ilroberts.service.impl.FHIRFlyServiceImpl;
 import com.ilroberts.service.ResourceService;
-import com.ilroberts.service.ResourceServiceImpl;
+import com.ilroberts.service.impl.ResourceServiceImpl;
 
 public class FHIRFlyModule extends AbstractModule {
 

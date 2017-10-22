@@ -1,5 +1,7 @@
-package com.ilroberts.service;
+package com.ilroberts.service.impl;
 
+import com.ilroberts.service.FHIRFlyService;
+import com.ilroberts.service.ResourceService;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 
@@ -14,21 +16,18 @@ public class FHIRFlyServiceImpl implements FHIRFlyService {
 
     public void run(String args[]) {
 
-        OptionParser parser = new OptionParser("h*r:");
+        OptionParser parser = new OptionParser("r:");
 
         try {
             OptionSet options = parser.parse(args);
 
             if(options.has("r") && options.hasArgument("r")) {
                 resourceService.processResource((String)options.valueOf("r"));
+            } else {
+                System.out.println("Usage: firefly -r resource_file");
             }
-
-            if(options.has("h")) {
-                System.out.println("Usage: firefly [-r resource_file | -b bundle_file]");
-            }
-
         } catch (OptionException e ) {
-            System.out.println("Usage: firefly [-r resource_file | -b bundle_file]");
+            System.out.println("Usage: firefly -r resource_file");
         }
     }
 }

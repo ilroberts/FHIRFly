@@ -65,7 +65,7 @@ compileTestKotlin {
 }
 
 shadowJar {
-    baseName = 'shadow'
+    baseName = 'fhirfly'
     classifier = null
-    version = null
+    version = '1.0'
 }
