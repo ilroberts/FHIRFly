@@ -1,0 +1,249 @@
+{
+  "resourceType": "Bundle",
+  "id": "178100",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2017-07-07T13:08:31.047-04:00"
+  },
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "http://spms.min-saude.pt/fhir/MessageHeader/b2b0296a-6b67-44c3-a3e6-7073fa8e5162",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "b2b0296a-6b67-44c3-a3e6-7073fa8e5162",
+        "event": {
+          "system": "http://spms.min-saude.pt/pnb/events",
+          "code": "10905",
+          "display": "CHRONIC_MED_QUERY"
+        },
+        "destination": [
+          {
+            "name": "VCI",
+            "endpoint": "SPMS/VCI"
+          }
+        ],
+        "timestamp": "2017-06-22T11:06:04.000Z",
+        "source": {
+          "name": "RCU2",
+          "endpoint": "SPMS/RCU2"
+        },
+        "response": {
+          "identifier": "fg3323a4-d7b4-4669-ab55-67ff36ef0459",
+          "code": "ok"
+        },
+        "focus": [
+          {
+            "reference": "List/e2734233-1bb8-4154-bff4-3fd274c27dbc"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://spms.min-saude.pt/fhir/List/e2734233-1bb8-4154-bff4-3fd274c27dbc",
+      "resource": {
+        "resourceType": "List",
+        "id": "e2734233-1bb8-4154-bff4-3fd274c27dbc",
+        "status": "current",
+        "mode": "working",
+        "title": "Lista de medicação crónica ativa e inativa",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "77603-9",
+              "display": "Medication treatment plan.extended Document"
+            }
+          ],
+          "text": "Lista de medicação crónica"
+        },
+        "subject": {
+          "reference": "Patient/174075114"
+        },
+        "date": "2017-07-03T23:10:23+11:00",
+        "source": {
+          "reference": "Device/RCU2"
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "MedicationStatement/0793a2a2-88cd-49a9-b344-ac66366cf4a7"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://spms.min-saude.pt/fhir/MedicationStatement/0793a2a2-88cd-49a9-b344-ac66366cf4a7",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "0793a2a2-88cd-49a9-b344-ac66366cf4a7",
+        "extension": [
+          {
+            "url": "http://spms.min-saude.pt/pem/fhir/extensions/request-type",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://spms.min-saude.pt/pem/fhir/extensions/request-type",
+                  "code": "MC"
+                }
+              ],
+              "text": "Medicação crónica"
+            }
+          },
+          {
+            "url": "http://spms.min-saude.pt/pem/fhir/extensions/prescription-type",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://spms.min-saude.pt/pem/fhir/extensions/prescription-type",
+                  "code": "0"
+                }
+              ],
+              "text": "DCI"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://spms.min-saude.pt/pem/fhir/identifiers/chronic-med-id",
+            "value": "5180"
+          }
+        ],
+        "status": "active",
+        "medicationReference": {
+          "reference": "Medication/7023"
+        },
+        "effectivePeriod": {
+          "start": "2009-03-30T00:00:00.000Z"
+        },
+        "dateAsserted": "2009-02-28T00:00:00.000Z",
+        "informationSource": {
+          "reference": "Practitioner/19287"
+        },
+        "subject": {
+          "reference": "Patient/174075114"
+        },
+        "taken": "unk",
+        "dosage": [
+          {
+            "sequence": 1,
+            "text": "1 comp. /dia",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v2/0162",
+                  "code": "48"
+                }
+              ],
+              "text": "Via oral"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://spms.min-saude.pt/fhir/Medication/7023",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "7023",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Aciclovir, Bisnaga - 1 unidade(s) - 3.5 g</div></div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://infarmed.pt/valueset/infarmed-emb-id",
+              "code": "7023"
+            },
+            {
+              "system": "http://infarmed.pt/valueset/infarmed-dci",
+              "code": "2",
+              "display": "Aciclovir"
+            },
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "N02AX02",
+              "display": "aciclovir"
+            },
+            {
+              "system": "http://infarmed.pt/valueset/infarmed-cnpem",
+              "code": "12",
+              "display": "Bisnaga - 1 unidade(s) - 3.5 g"
+            }
+          ],
+          "text": "Aciclovir, Bisnaga - 1 unidade(s) - 3.5 g"
+        },
+        "isBrand": false,
+        "form": {
+          "coding": [
+            {
+              "system": "http://infarmed.pt/valueset/infarmed-forma-farmaceutica",
+              "code": "50",
+              "display": "Creme"
+            }
+          ]
+        },
+        "package": {
+          "container": {
+            "coding": [
+              {
+                "system": "http://spms.min-saude.pt/fhir/valueset/pem-tipo-embalagem",
+                "code": "55",
+                "display": "Bisnaga - 3.5 g"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "http://spms.min-saude.pt/fhir/Patient/174075114",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "174075114",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\"/><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>3113400990508</td></tr><tr><td>Date of birth</td><td><span>19 November 1979</span></td></tr></tbody></table></div>"
+        },
+        "identifier": [
+          {
+            "type": {
+              "text": "NICS"
+            },
+            "value": "3113400990508"
+          },
+          {
+            "type": {
+              "text": "SNS"
+            },
+            "value": "174075114"
+          }
+        ],
+        "name": [
+          {
+            "text": "John Doe"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1979-11-19"
+      }
+    },
+    {
+      "fullUrl": "http://spms.min-saude.pt/fhir/Practitioner/19287",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "19287",
+        "identifier": [
+          {
+            "type": {
+              "text": "Ordem dos médicos"
+            },
+            "value": "19287"
+          }
+        ]
+      }
+    }
+  ]
+}
